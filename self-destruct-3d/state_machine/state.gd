@@ -1,19 +1,22 @@
 extends Node
+class_name State
 
-# set if this state should be initialised when entering tree
-export(bool) var init_state = false
+onready var parent = get_parent().get_parent()
 
-func s_init(parent):
+func _s_init():
 	pass
 
-func s_ready():
+func _s_physics_process(delta):
 	pass
 
-func s_physics_process(delta):
+func _s_process(delta):
 	pass
 
-func s_process(delta):
+func _s_exit():
 	pass
 
-func s_exit():
+func _s_input(event):
+	pass
+
+func _s_unhandled_input(event):
 	pass
