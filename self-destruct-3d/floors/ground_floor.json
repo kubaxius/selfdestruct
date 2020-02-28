@@ -1,0 +1,55 @@
+{
+  "security_cards": {
+    "security_card_level_3": {
+      "locations": [
+        "security_2"
+      ],
+      "number": 1,
+      "given_security_levels": [
+        "security_level_2",
+        "security_level_3"
+      ]
+    },
+    "security_card_level_2": {
+      "locations": [
+        "security_1"
+      ],
+      "number": 1,
+      "given_security_levels": [
+        "security_level_2"
+      ]
+    }
+  },
+  "rooms": {
+    "elevator": {
+      "min_number": 1,
+      "max_number": 1,
+      "paths": [
+        "res://rooms/lab/*"
+      ]
+    },
+    "security_1": {
+      "min_number": 3,
+      "max_number": 5,
+      "paths": [
+        "res://rooms/lab/*"
+      ]
+    },
+    "security_2": {
+      "min_number": 3,
+      "max_number": 5,
+      "paths": [
+        "res://rooms/lab/*"
+      ],
+      "needed_security_level": "security_level_2"
+    },
+    "security_3": {
+      "min_number": 3,
+      "max_number": 5,
+      "paths": [
+        "res://rooms/lab/*"
+      ],
+      "needed_security_level": "security_level_3"
+    }
+  }
+}
