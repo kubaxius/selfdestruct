@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mobs/players/controlls_handler/ControllsHandler.tscn" type="PackedScene" id=1]
+
+[node name="Boombot" type="RigidBody"]
+
+[node name="ControllsHandler" parent="." instance=ExtResource( 1 )]
