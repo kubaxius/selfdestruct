@@ -9,3 +9,4 @@ export_presets.cfg
 
 # Blender backups
 *.blend1
+*.png~
