@@ -14,7 +14,8 @@ var floors_settings_paths = {
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	pass
+	var space_state = get_world().direct_space_state
+	#space_state.intersect_shape()
 	#generate_floor(floors.GROUND_FLOOR)
 
 #import rooms files from paths and return them in array

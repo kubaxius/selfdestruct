@@ -6,7 +6,7 @@
 [node name="Gameplay" type="Spatial"]
 
 [node name="Boombot" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67093, 0.352217 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718808, 0 )
 
 [node name="Rooms" type="Spatial" parent="."]
 script = ExtResource( 1 )
