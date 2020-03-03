@@ -16,8 +16,6 @@ func _ready():
 	set_process(standard_processing)
 	set_process_input(process_input)
 	set_process_unhandled_input(process_unhandled_input)
-	if not is_state_set():
-		set_current_state(0)
 
 func _physics_process(delta):
 	current_state._s_physics_process(delta)

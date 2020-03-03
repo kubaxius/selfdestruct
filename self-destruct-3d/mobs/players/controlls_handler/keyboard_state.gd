@@ -23,5 +23,5 @@ func handle_movement():
 	
 	parent.set_player_velocity(movement_vector)
 
-func _s_process(event):
+func _s_process(_event):
 	handle_movement()

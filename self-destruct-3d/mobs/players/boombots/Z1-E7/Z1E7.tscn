@@ -13,6 +13,7 @@ height = 0.35517
 collision_layer = 2
 mode = 2
 gravity_scale = 0.0
+can_sleep = false
 script = ExtResource( 3 )
 ascending = 1.00033
 
