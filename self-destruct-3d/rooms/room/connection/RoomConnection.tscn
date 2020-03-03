@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://rooms/room/connection/connection.gd" type="Script" id=1]
 [ext_resource path="res://rooms/room/connection/arrow.png" type="Texture" id=2]
 [ext_resource path="res://state_machine/State.tscn" type="PackedScene" id=3]
 [ext_resource path="res://state_machine/StateMachine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rooms/room/connection/types/room_part.gd" type="Script" id=5]
+[ext_resource path="res://rooms/room/connection/types/double_door.gd" type="Script" id=6]
+[ext_resource path="res://rooms/room/connection/types/trap_door.gd" type="Script" id=7]
 
 [node name="RoomConnection" type="Position3D" groups=[
 "room_connections",
@@ -19,8 +22,11 @@ __meta__ = {
 
 [node name="StateMachine" parent="." instance=ExtResource( 4 )]
 
-[node name="Door" parent="StateMachine" instance=ExtResource( 3 )]
+[node name="DoubleDoor" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 6 )
 
 [node name="TrapDoor" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 7 )
 
 [node name="RoomPart" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 5 )

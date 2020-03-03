@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "State",
+"class": "ConnectionType",
+"language": "GDScript",
+"path": "res://rooms/room/connection/types/connection_type.gd"
+}, {
 "base": "Node",
 "class": "Helper",
 "language": "GDScript",
 "path": "res://utils/helper.gd"
+}, {
+"base": "Spatial",
+"class": "Room",
+"language": "GDScript",
+"path": "res://rooms/room/room.gd"
 }, {
 "base": "Position3D",
 "class": "RoomConnection",
@@ -30,7 +40,9 @@ _global_script_classes=[ {
 "path": "res://state_machine/state_machine.gd"
 } ]
 _global_script_class_icons={
+"ConnectionType": "",
 "Helper": "",
+"Room": "",
 "RoomConnection": "",
 "State": "",
 "StateMachine": ""

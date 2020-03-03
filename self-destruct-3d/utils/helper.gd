@@ -49,3 +49,16 @@ static func list_files_in_directory(path, with_path: bool = true):
 	dir.list_dir_end()
 
 	return files
+
+static func get_random_item(arr: Array, rng: RandomNumberGenerator, pop = false):
+	if arr.size() == 0:
+		return null
+
+	var index = rng.randi_range(0, arr.size() - 1)
+	var value = arr[index]
+	if pop:
+		arr.remove(index)
+	return value
+
+static func pop_random_item(arr: Array, rng: RandomNumberGenerator):
+	return get_random_item(arr, rng, true)
