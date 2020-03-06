@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mobs/players/boombots/Z1-E7/Z1E7.tscn" type="PackedScene" id=1]
+[ext_resource path="res://floors/GroundFloor.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.5
+
+[node name="Gameplay" type="Spatial"]
+
+[node name="Boombot" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35943, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="GroundFloor" parent="." instance=ExtResource( 2 )]

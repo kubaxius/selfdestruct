@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://abstract/Floor/FloorPart/Room/room.gd" type="Script" id=3]
+
+[node name="Room" type="Spatial" groups=[
+"rooms",
+]]
+script = ExtResource( 3 )
+
+[node name="Walls" type="GridMap" parent="."]
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+collision_mask = 14
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Floors" type="GridMap" parent="."]
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+collision_mask = 14
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Connections" type="Spatial" parent="."]

@@ -6,8 +6,8 @@
 [ext_resource path="res://mobs/players/boombots/Z1-E7/models/core.gltf" type="PackedScene" id=4]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 0.488929
-height = 0.35517
+radius = 0.362271
+height = 0.214795
 
 [node name="Boombot" instance=ExtResource( 1 )]
 collision_layer = 2
@@ -17,16 +17,16 @@ can_sleep = false
 script = ExtResource( 3 )
 ascending = 1.00033
 
-[node name="Core" parent="." index="1" instance=ExtResource( 4 )]
+[node name="core" parent="." index="1" instance=ExtResource( 4 )]
 
-[node name="Rim" parent="." index="2" instance=ExtResource( 2 )]
+[node name="rim" parent="core" index="1" instance=ExtResource( 2 )]
 
-[node name="Camera" type="Camera" parent="." index="3"]
+[node name="Camera" type="Camera" parent="." index="2"]
 transform = Transform( -1.62921e-07, 0.870648, -0.491907, 0, 0.491907, 0.870648, 1, 1.41847e-07, -8.01418e-08, -2.181, 4.474, 0 )
 
-[node name="RayCast" type="RayCast" parent="." index="4"]
+[node name="RayCast" type="RayCast" parent="." index="3"]
 enabled = true
 cast_to = Vector3( 0, -3, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="5"]
+[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 shape = SubResource( 1 )

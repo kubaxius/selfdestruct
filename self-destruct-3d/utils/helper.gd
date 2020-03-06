@@ -3,6 +3,12 @@ class_name Helper
 
 const FLOAT_EPSILON = 0.00001
 
+static func get_centered_range(size: int) -> Array:
+	if size % 2 == 0:
+		return range(-size/2, size/2)
+	else:
+		return range(-size/2, size/2 + 1)
+
 static func compare_floats(a, b, epsilon = FLOAT_EPSILON):
 	return abs(a - b) <= epsilon
 
@@ -31,7 +37,7 @@ static func instance_node_from_path(path: String) -> Node:
 	var scene = scene_resource.instance()
 	return scene
 
-static func list_files_in_directory(path, with_path: bool = true):
+static func list_files_in_directory(path: String, prepend_path: bool = true):
 	var files = []
 	var dir = Directory.new()
 	dir.open(path)
@@ -42,7 +48,9 @@ static func list_files_in_directory(path, with_path: bool = true):
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			if(with_path):
+			if(prepend_path):
+				if not path.ends_with("/"):
+					path += "/"
 				file = path+file
 			files.append(file)
 
@@ -62,3 +70,10 @@ static func get_random_item(arr: Array, rng: RandomNumberGenerator, pop = false)
 
 static func pop_random_item(arr: Array, rng: RandomNumberGenerator):
 	return get_random_item(arr, rng, true)
+
+static func get_children_in_group(node: Node, group: String) -> Array:
+	var children = []
+	for child in node.get_children():
+		if child.is_in_group(group):
+			children.append(child)
+	return children

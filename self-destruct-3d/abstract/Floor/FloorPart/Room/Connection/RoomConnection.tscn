@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/connection.gd" type="Script" id=1]
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/arrow.png" type="Texture" id=2]
+[ext_resource path="res://utils/StateMachine/State.tscn" type="PackedScene" id=3]
+[ext_resource path="res://utils/StateMachine/StateMachine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/room_part.gd" type="Script" id=5]
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/door.gd" type="Script" id=6]
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/trap_door_floor.gd" type="Script" id=7]
+[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/trap_door_ceiling.gd" type="Script" id=8]
+
+[node name="RoomConnection" type="Position3D" groups=[
+"room_connections",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -0.5, 1.62921e-07, 2.65431e-14, 0, -8.14603e-08, 0.5, 1.62921e-07, 0.5, 8.14603e-08, 0, 0.2, 0 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StateMachine" parent="." instance=ExtResource( 4 )]
+
+[node name="Door" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 6 )
+
+[node name="TrapDoorFloor" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 7 )
+
+[node name="TrapDoorCeiling" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 8 )
+
+[node name="RoomPart" parent="StateMachine" instance=ExtResource( 3 )]
+script = ExtResource( 5 )

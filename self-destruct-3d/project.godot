@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "ConnectionType",
 "language": "GDScript",
-"path": "res://rooms/room/connection/types/connection_type.gd"
+"path": "res://abstract/Floor/FloorPart/Room/Connection/types/connection_type.gd"
 }, {
 "base": "Node",
 "class": "Helper",
@@ -22,22 +22,22 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Room",
 "language": "GDScript",
-"path": "res://rooms/room/room.gd"
+"path": "res://abstract/Floor/FloorPart/Room/room.gd"
 }, {
 "base": "Position3D",
 "class": "RoomConnection",
 "language": "GDScript",
-"path": "res://rooms/room/connection/connection.gd"
+"path": "res://abstract/Floor/FloorPart/Room/Connection/connection.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://state_machine/state.gd"
+"path": "res://utils/StateMachine/state.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://state_machine/state_machine.gd"
+"path": "res://utils/StateMachine/state_machine.gd"
 } ]
 _global_script_class_icons={
 "ConnectionType": "",
@@ -50,8 +50,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Self-destruct- 3d"
-run/main_scene="res://screens/gameplay/Gameplay.tscn"
+config/name="SelfDestruct3D"
+run/main_scene="res://scenes/Gameplay/Gameplay.tscn"
 config/icon="res://icon.png"
 
 [input]
