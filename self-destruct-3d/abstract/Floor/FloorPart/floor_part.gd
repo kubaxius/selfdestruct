@@ -8,6 +8,11 @@ export(Array, PackedScene) var single_rooms
 export(int, 1, 20) var min_rooms_number = 1
 export(int, 1, 20) var max_rooms_number = 3
 
+# If this is true, connections queue no longer works like queue
+# but instead next connection is randomized. It makes floor generation more
+# random, but can also make it too random.
+export(bool) var random_connection = true
+
 onready var floor_instance = get_parent()
 onready var rng = floor_instance.rng
 onready var roomset = get_packed_rooms()
@@ -52,6 +57,7 @@ func connect_random_room(current_connection: RoomConnection):
 		
 		for connection in current_room_connections:
 			if current_connection.does_connection_match(connection):
+				# move room to position
 				current_room.transform = current_connection.get_room_transform(connection)
 				if floor_instance.can_room_be_placed(current_room):
 					add_child(current_room)
@@ -70,9 +76,15 @@ func place_random_room():
 		add_child(connected_room)
 		connected_room.add_to_group("first_room")
 	elif connections_queue.size() > 0:
-		connected_room = connect_random_room(connections_queue.pop_front())
+		var connection
+		if random_connection:
+			connection = Helper.pop_random_item(connections_queue, rng)
+		else:
+			connection = connections_queue.pop_front()
+		connected_room = connect_random_room(connection)
 	else:
 		$StateMachine.current_state = "Failed"
 	
+	# if connection was successful
 	if typeof(connected_room) == TYPE_OBJECT:
 		connections_queue += connected_room.get_empty_connections()

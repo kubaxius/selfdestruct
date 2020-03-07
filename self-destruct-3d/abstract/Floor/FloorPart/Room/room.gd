@@ -37,7 +37,7 @@ func player_exited():
 	$Ceilings.fade_in()
 
 func _ready():
-	$Ceilings.fade_out()
+	pass#$Ceilings.fade_out()
 
 func place_player(player):
 	add_child(player)
