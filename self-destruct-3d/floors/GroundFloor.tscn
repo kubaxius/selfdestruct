@@ -8,4 +8,4 @@
 [node name="FloorPart" parent="." index="0" instance=ExtResource( 2 )]
 room_dirs = [ "res://floors/rooms/lab" ]
 min_rooms_number = 7
-max_rooms_number = 8
+max_rooms_number = 14

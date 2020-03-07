@@ -16,7 +16,9 @@ onready var desired_rooms_count = rng.randi_range(min_rooms_number,
 
 var connections_queue = []
 
+# warning-ignore:unused_signal
 signal generation_finished
+# warning-ignore:unused_signal
 signal generation_failed
 
 func generate():
@@ -66,6 +68,7 @@ func place_random_room():
 	if get_tree().get_nodes_in_group("rooms").size() == 0:
 		connected_room = Helper.get_random_item(roomset, rng).instance()
 		add_child(connected_room)
+		connected_room.add_to_group("first_room")
 	elif connections_queue.size() > 0:
 		connected_room = connect_random_room(connections_queue.pop_front())
 	else:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://abstract/Floor/FloorPart/Room/GridMap/RoomGridMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://abstract/Floor/FloorPart/Room/room.gd" type="Script" id=3]
 
 [node name="Room" type="Spatial" groups=[
@@ -7,28 +8,22 @@
 ]]
 script = ExtResource( 3 )
 
-[node name="Walls" type="GridMap" parent="."]
-cell_size = Vector3( 1, 1, 1 )
-cell_center_y = false
-collision_mask = 14
+[node name="Floors" parent="." instance=ExtResource( 1 )]
 data = {
 "cells": PoolIntArray(  )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 0, 0 )
 }
 
-[node name="Floors" type="GridMap" parent="."]
-cell_size = Vector3( 1, 1, 1 )
-cell_center_y = false
-collision_mask = 14
+[node name="Ceilings" parent="." instance=ExtResource( 1 )]
 data = {
 "cells": PoolIntArray(  )
 }
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 0, 0 )
+
+[node name="Walls" parent="." instance=ExtResource( 1 )]
+data = {
+"cells": PoolIntArray(  )
 }
 
 [node name="Connections" type="Spatial" parent="."]
+
+[node name="PlayerSpawnPoint" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

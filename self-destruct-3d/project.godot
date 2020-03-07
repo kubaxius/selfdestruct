@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://abstract/Floor/FloorPart/Room/Connection/connection.gd"
 }, {
+"base": "GridMap",
+"class": "RoomGridMap",
+"language": "GDScript",
+"path": "res://abstract/Floor/FloorPart/Room/GridMap/room_grid_map.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -44,6 +49,7 @@ _global_script_class_icons={
 "Helper": "",
 "Room": "",
 "RoomConnection": "",
+"RoomGridMap": "",
 "State": "",
 "StateMachine": ""
 }

@@ -2,10 +2,12 @@ extends Spatial
 
 # it is a inverse of standard collision margin, to nullify placed rooms
 # collision margin - it makes it possible to place rooms touching other rooms
-const rooms_collision_margin = -0.04
+const rooms_collision_margin = -0.05
 
 var rng = RandomNumberGenerator.new()
 onready var floor_parts = Helper.get_children_in_group(self, "floor_parts")
+
+signal generation_finished
 
 # return all empty connections of all placed rooms
 func get_all_empty_connections():
@@ -46,10 +48,11 @@ func _on_generation_failed():
 
 func _on_floor_parts_generation_finished():
 	fix_empty_connections_holes()
+	emit_signal("generation_finished")
 
-func _ready():
-	rng.seed = hash("a w mordę jeża!")
-	
+# creates queue of signals - when first FloorPart finishes generation, it sends
+# signal that starts next FloorPart generation and so on
+func setup_generation_signals():
 	for i in floor_parts.size():
 		# if there is next FloorPart, connect it to this 
 		# FloorPart signal "generation_finished"
@@ -65,4 +68,7 @@ func _ready():
 		floor_parts[i].connect("generation_failed", 
 								self, "_on_generation_failed")
 
+func _ready():
+	rng.seed = hash(OS.get_ticks_msec())
+	setup_generation_signals()
 	floor_parts[0].generate()

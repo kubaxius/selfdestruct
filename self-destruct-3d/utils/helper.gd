@@ -5,8 +5,12 @@ const FLOAT_EPSILON = 0.00001
 
 static func get_centered_range(size: int) -> Array:
 	if size % 2 == 0:
+# warning-ignore:integer_division
+# warning-ignore:integer_division
 		return range(-size/2, size/2)
 	else:
+# warning-ignore:integer_division
+# warning-ignore:integer_division
 		return range(-size/2, size/2 + 1)
 
 static func compare_floats(a, b, epsilon = FLOAT_EPSILON):

@@ -22,7 +22,7 @@ func fill_gridmap_rect(gridmap: GridMap, gridmap_pos: Vector3, tile_id: int,
 	for h in height_range:
 		for w in width_range:
 			var current_pos = gridmap_pos + top*h + right*w
-			gridmap.set_cell_item(round(current_pos.x), round(current_pos.y), round(current_pos.z), tile_id, orientation)
+			gridmap.set_cell_item(int(round(current_pos.x)), int(round(current_pos.y)), int(round(current_pos.z)), tile_id, orientation)
 
 func fix_gridmap_hole(gridmap: GridMap):
 	var hole_width: int = parent.hole_width
@@ -35,7 +35,6 @@ func fix_gridmap_hole(gridmap: GridMap):
 	t.origin += t.basis.z * 0.5
 	
 	var gridmap_pos = gridmap.world_to_map(t.origin)
-	var orientation = t.basis.get_orthogonal_index()
 	
 	fill_gridmap_rect(gridmap, gridmap_pos, fixing_tile_id, hole_width, hole_height, t.basis)
 
