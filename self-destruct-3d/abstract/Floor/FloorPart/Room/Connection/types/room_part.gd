@@ -1,6 +1,9 @@
 tool
 extends ConnectionType
 
+func place_door():
+	pass
+
 func _s_tool_processing(delta):
 	var parent = get_parent().get_parent()
 	var vis = parent.get_node("HoleVisualization")

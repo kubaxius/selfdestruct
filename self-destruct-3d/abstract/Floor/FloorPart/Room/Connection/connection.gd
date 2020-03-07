@@ -25,7 +25,7 @@ export(PackedScene) var door_file
 
 onready var room = get_parent().get_parent()
 var connected_to
-var main = false
+var master_connection = false
 
 func _ready():
 	$StateMachine.current_state = type
@@ -34,7 +34,7 @@ func _ready():
 	$HoleVisualization.hide()
 
 func connect_room(connection):
-	main = true
+	master_connection = true
 	connected_to = connection
 	connected_to.connected_to = self
 	place_door()
@@ -54,8 +54,7 @@ func fix_hole():
 			push_error("No FixingObject even though it is set to use it")
 
 func place_door():
-	if typeof(door_file) != TYPE_NIL:
-		add_child(door_file.instance())
+	$StateMachine.current_state.place_door()
 
 func does_connection_match(connection) -> bool:
 	return $StateMachine.current_state.does_connection_match(connection)

@@ -29,7 +29,7 @@ transform = Transform( -1.62921e-07, 0.870648, -0.491907, 0, 0.491907, 0.870648,
 
 [node name="RayCast" type="RayCast" parent="." index="3"]
 enabled = true
-cast_to = Vector3( 0, -3, 0 )
+cast_to = Vector3( 0, -6, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 shape = SubResource( 1 )

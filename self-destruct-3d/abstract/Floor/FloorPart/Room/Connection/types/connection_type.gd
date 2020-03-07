@@ -1,6 +1,10 @@
 extends State
 class_name ConnectionType
 
+func place_door():
+	if typeof(parent.door_file) != TYPE_NIL:
+		parent.add_child(parent.door_file.instance())
+
 func does_connection_match(connection) -> bool:
 	if parent.type == connection.type:
 		if parent.hole_width == connection.hole_width:

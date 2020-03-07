@@ -1,6 +1,8 @@
 extends Spatial
 class_name Room
 
+var player_inside = false
+
 # warning-ignore:unused_signal
 signal player_entered
 # warning-ignore:unused_signal
@@ -36,11 +38,13 @@ func get_array_of_shapes_and_their_transforms() -> Array:
 	return shapes_array
 
 func player_entered():
-	if not $StateMachine.current_state.name == "PlayerInside":
+	if not player_inside:
+		player_inside = true
 		$StateMachine.current_state = "PlayerInside"
 
 func player_exited():
-	if not $StateMachine.current_state.name == "PlayerOutside":
+	if player_inside:
+		player_inside = false
 		$StateMachine.current_state = "PlayerOutside"
 
 func fade_out():
