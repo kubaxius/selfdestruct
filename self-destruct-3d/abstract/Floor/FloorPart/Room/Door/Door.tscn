@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area
+
+
+
+func _on_MasterRoomArea_body_entered(body):
+	print(body)
+"
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1, 0.5 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 0.380392 )
+
+[node name="Door" type="Spatial"]
+
+[node name="MasterRoomArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.5 )
+collision_layer = 16
+collision_mask = 2
+script = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MasterRoomArea"]
+shape = SubResource( 2 )
+
+[node name="SlaveRoomArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SlaveRoomArea"]
+shape = SubResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+depth = 0.149607
+material = SubResource( 4 )
+[connection signal="body_entered" from="MasterRoomArea" to="MasterRoomArea" method="_on_MasterRoomArea_body_entered"]

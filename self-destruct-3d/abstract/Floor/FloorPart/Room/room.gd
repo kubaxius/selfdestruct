@@ -1,6 +1,11 @@
 extends Spatial
 class_name Room
 
+# warning-ignore:unused_signal
+signal player_entered
+# warning-ignore:unused_signal
+signal player_exited
+
 func get_empty_connections() -> Array:
 	var connections = []
 	
@@ -31,13 +36,22 @@ func get_array_of_shapes_and_their_transforms() -> Array:
 	return shapes_array
 
 func player_entered():
-	$Ceilings.fade_out()
+	if not $StateMachine.current_state.name == "PlayerInside":
+		$StateMachine.current_state = "PlayerInside"
 
 func player_exited():
-	$Ceilings.fade_in()
+	if not $StateMachine.current_state.name == "PlayerOutside":
+		$StateMachine.current_state = "PlayerOutside"
 
-func _ready():
-	pass#$Ceilings.fade_out()
+func fade_out():
+	$Ceilings.fade_out()
+	$Floors.fade_out()
+	$Walls.fade_out()
+
+func fade_in():
+	$Ceilings.fade_in()
+	$Floors.fade_in()
+	$Walls.fade_in()
 
 func place_player(player):
 	add_child(player)

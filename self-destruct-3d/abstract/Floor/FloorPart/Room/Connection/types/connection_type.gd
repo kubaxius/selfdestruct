@@ -8,6 +8,16 @@ func does_connection_match(connection) -> bool:
 				return true
 	return false
 
+func get_possible_room_transforms(room_connection) -> Array:
+	var second_wall_thickness = room_connection.wall_thickness
+	# gets its own transform
+	var t: Transform = parent.global_transform
+	# moves transform forward to fit summed thickness of both walls
+	t = t.translated(Vector3(0, 0, parent.wall_thickness + second_wall_thickness))
+	# rotates transform 180 degrees along y axis
+	t.basis = t.basis.rotated(parent.transform.basis.y, PI)
+	t *= room_connection.transform.inverse()
+	return [t]
 
 func fix_gridmap_hole(t: Transform, gridmap: GridMap, center_height = true,
 					  height_multiplier = 1, copy_rotation_to_tiles = false):
@@ -44,4 +54,7 @@ func fix_gridmap_hole(t: Transform, gridmap: GridMap, center_height = true,
 			gridmap.set_cell_item(int(round(current_pos.x)), int(round(current_pos.y)), int(round(current_pos.z)), tile_id, orientation)
 
 func fix_hole():
+	pass
+
+func connect_room(_connection):
 	pass

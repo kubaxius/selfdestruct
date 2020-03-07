@@ -57,12 +57,13 @@ func connect_random_room(current_connection: RoomConnection):
 		
 		for connection in current_room_connections:
 			if current_connection.does_connection_match(connection):
-				# move room to position
-				current_room.transform = current_connection.get_room_transform(connection)
-				if floor_instance.can_room_be_placed(current_room):
-					add_child(current_room)
-					current_connection.connect_room(connection)
-					return current_room
+				# checks room in every possible position
+				for t in current_connection.get_possible_room_transforms(connection):
+					current_room.transform = t
+					if floor_instance.can_room_be_placed(current_room):
+						add_child(current_room)
+						current_connection.connect_room(connection)
+						return current_room
 	return false
 
 func _on_previous_floor_part_generation_finished():

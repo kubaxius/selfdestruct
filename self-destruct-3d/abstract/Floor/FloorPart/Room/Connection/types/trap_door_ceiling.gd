@@ -18,5 +18,18 @@ func does_connection_match(connection) -> bool:
 				return true
 	return false
 
+func get_possible_room_transforms(room_connection) -> Array:
+	var second_wall_thickness = room_connection.wall_thickness
+	# gets its own transform
+	var t: Transform = parent.global_transform
+	# moves transform forward to fit summed thickness of both walls
+	t = t.translated(Vector3(0, 0, parent.wall_thickness + second_wall_thickness))
+	t *= room_connection.transform.inverse()
+	
+	var t_array = []
+	for i in [0, 0.5, 1, 1.5]:
+		t_array.append(t.rotated(t.basis.y, i*PI))
+	return t_array
+
 func fix_hole():
 	fix_gridmap_hole(parent.transform, parent.get_parent().get_parent().get_node("Ceilings"))
