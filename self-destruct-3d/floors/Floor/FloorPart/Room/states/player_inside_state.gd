@@ -1,4 +1,4 @@
-extends "res://abstract/Floor/FloorPart/Room/states/room_state.gd"
+extends "res://floors/Floor/FloorPart/Room/states/room_state.gd"
 
 func _s_init():
 	parent.get_node("Ceilings").fade_out()

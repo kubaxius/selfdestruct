@@ -18,8 +18,8 @@ func fix_hole():
 	fix_gridmap_hole(parent.transform, parent.get_parent().get_parent().get_node("Walls"), false, 2, true)
 
 func connect_room(connection):
-	var master_room: Room = parent.room
-	var slave_room: Room = connection.room
+	var master_room: myRoom = parent.room
+	var slave_room: myRoom = connection.room
 	
 	master_room.connect("player_entered", slave_room, "player_entered")
 	slave_room.connect("player_entered", master_room, "player_entered")

@@ -1,14 +1,15 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/connection.gd" type="Script" id=1]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Door/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/connection.gd" type="Script" id=1]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Door/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://utils/StateMachine/State.tscn" type="PackedScene" id=3]
 [ext_resource path="res://utils/StateMachine/StateMachine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/room_part.gd" type="Script" id=5]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/door.gd" type="Script" id=6]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/trap_door_floor.gd" type="Script" id=7]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/types/trap_door_ceiling.gd" type="Script" id=8]
-[ext_resource path="res://abstract/Floor/FloorPart/Room/Connection/assets/connection_arrow.gltf" type="PackedScene" id=9]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/types/room_part.gd" type="Script" id=5]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/types/door.gd" type="Script" id=6]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/types/trap_door_floor.gd" type="Script" id=7]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/types/trap_door_ceiling.gd" type="Script" id=8]
+[ext_resource path="res://floors/Floor/FloorPart/Room/Connection/assets/connection_arrow.gltf" type="PackedScene" id=9]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true

@@ -23,7 +23,7 @@ func fix_empty_connections_holes():
 
 # take room walls from its GridMap and try to collide them with any
 # existing shapes on ENVIROMENT collision layer
-func can_room_be_placed(room: Room) -> bool:
+func can_room_be_placed(room: myRoom) -> bool:
 	var space_state = get_world().direct_space_state
 	var room_shapes_and_transforms = room.get_array_of_shapes_and_their_transforms()
 	var psqp

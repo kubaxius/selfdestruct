@@ -12,27 +12,22 @@ _global_script_classes=[ {
 "base": "State",
 "class": "ConnectionType",
 "language": "GDScript",
-"path": "res://abstract/Floor/FloorPart/Room/Connection/types/connection_type.gd"
+"path": "res://floors/Floor/FloorPart/Room/Connection/types/connection_type.gd"
 }, {
 "base": "Node",
 "class": "Helper",
 "language": "GDScript",
 "path": "res://utils/helper.gd"
 }, {
-"base": "Spatial",
-"class": "Room",
-"language": "GDScript",
-"path": "res://abstract/Floor/FloorPart/Room/room.gd"
-}, {
 "base": "Position3D",
 "class": "RoomConnection",
 "language": "GDScript",
-"path": "res://abstract/Floor/FloorPart/Room/Connection/connection.gd"
+"path": "res://floors/Floor/FloorPart/Room/Connection/connection.gd"
 }, {
 "base": "GridMap",
 "class": "RoomGridMap",
 "language": "GDScript",
-"path": "res://abstract/Floor/FloorPart/Room/GridMap/room_grid_map.gd"
+"path": "res://floors/Floor/FloorPart/Room/GridMap/room_grid_map.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -43,15 +38,20 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://utils/StateMachine/state_machine.gd"
+}, {
+"base": "Spatial",
+"class": "myRoom",
+"language": "GDScript",
+"path": "res://floors/Floor/FloorPart/Room/room.gd"
 } ]
 _global_script_class_icons={
 "ConnectionType": "",
 "Helper": "",
-"Room": "",
 "RoomConnection": "",
 "RoomGridMap": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"myRoom": ""
 }
 
 [application]
@@ -64,22 +64,22 @@ config/icon="res://icon.png"
 
 p1_forward={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 p1_left={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 p1_right={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 p1_backward={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 p1_shoot={
@@ -89,12 +89,12 @@ p1_shoot={
 }
 p1_jump={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 p1_crouch={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

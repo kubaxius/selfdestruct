@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/connection_arrow.gltf-0dc823d004e9d983af440c9139e6aa8b.scn"
+path="res://.import/door.gltf-ecd72b7bbee5c2806d84ae5bc3d9f92b.scn"
 
 [deps]
 
-source_file="res://abstract/Floor/FloorPart/Room/Connection/assets/connection_arrow.gltf"
-dest_files=[ "res://.import/connection_arrow.gltf-0dc823d004e9d983af440c9139e6aa8b.scn" ]
+source_file="res://floors/Floor/FloorPart/Room/Door/models/door.gltf"
+dest_files=[ "res://.import/door.gltf-ecd72b7bbee5c2806d84ae5bc3d9f92b.scn" ]
 
 [params]
 
@@ -16,14 +16,17 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=true
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
+meshes/octahedral_compression=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
