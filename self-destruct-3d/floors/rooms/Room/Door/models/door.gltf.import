@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/connection_arrow.gltf-31a6c1802541e6e24060f52be609b0c8.scn"
+path="res://.import/door.gltf-9903ab937edbcf4d79cef8a60205f72b.scn"
 
 [deps]
 
-source_file="res://floors/Floor/FloorPart/Room/Connection/assets/connection_arrow.gltf"
-dest_files=[ "res://.import/connection_arrow.gltf-31a6c1802541e6e24060f52be609b0c8.scn" ]
+source_file="res://floors/rooms/Room/Door/models/door.gltf"
+dest_files=[ "res://.import/door.gltf-9903ab937edbcf4d79cef8a60205f72b.scn" ]
 
 [params]
 

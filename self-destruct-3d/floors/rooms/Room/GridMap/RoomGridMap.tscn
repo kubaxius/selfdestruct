@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://floors/Floor/FloorPart/Room/GridMap/room_grid_map.gd" type="Script" id=1]
-[ext_resource path="res://floors/Floor/FloorPart/Room/GridMap/fade_in.anim" type="Animation" id=2]
-[ext_resource path="res://floors/Floor/FloorPart/Room/GridMap/fade_out.anim" type="Animation" id=3]
+[ext_resource path="res://floors/rooms/Room/GridMap/room_grid_map.gd" type="Script" id=1]
+[ext_resource path="res://floors/rooms/Room/GridMap/fade_in.anim" type="Animation" id=2]
+[ext_resource path="res://floors/rooms/Room/GridMap/fade_out.anim" type="Animation" id=3]
 
 
 [node name="RoomGridMap" type="GridMap"]

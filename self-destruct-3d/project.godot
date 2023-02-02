@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "ConnectionType",
 "language": "GDScript",
-"path": "res://floors/Floor/FloorPart/Room/Connection/types/connection_type.gd"
+"path": "res://floors/rooms/Room/Connection/types/connection_type.gd"
 }, {
 "base": "Node",
 "class": "Helper",
@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "Position3D",
 "class": "RoomConnection",
 "language": "GDScript",
-"path": "res://floors/Floor/FloorPart/Room/Connection/connection.gd"
+"path": "res://floors/rooms/Room/Connection/connection.gd"
 }, {
 "base": "GridMap",
 "class": "RoomGridMap",
 "language": "GDScript",
-"path": "res://floors/Floor/FloorPart/Room/GridMap/room_grid_map.gd"
+"path": "res://floors/rooms/Room/GridMap/room_grid_map.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "myRoom",
 "language": "GDScript",
-"path": "res://floors/Floor/FloorPart/Room/room.gd"
+"path": "res://floors/rooms/Room/room.gd"
 } ]
 _global_script_class_icons={
 "ConnectionType": "",
