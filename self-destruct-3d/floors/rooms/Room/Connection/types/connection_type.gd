@@ -12,6 +12,8 @@ func does_connection_match(connection) -> bool:
 				return true
 	return false
 
+# basic transform, just takes wall thicknes of both rooms 
+# moves the room we are connecting by this ammount and flips it
 func get_possible_room_transforms(room_connection) -> Array:
 	var second_wall_thickness = room_connection.wall_thickness
 	# gets its own transform

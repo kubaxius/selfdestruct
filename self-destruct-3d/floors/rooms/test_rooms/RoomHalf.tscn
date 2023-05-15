@@ -6,7 +6,6 @@
 [ext_resource path="res://floors/rooms/Room/Room.tscn" type="PackedScene" id=4]
 [ext_resource path="res://floors/rooms/Room/Connection/RoomConnection.tscn" type="PackedScene" id=5]
 
-
 [node name="Room" instance=ExtResource( 4 )]
 
 [node name="Floors" parent="." index="0"]

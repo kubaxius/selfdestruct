@@ -37,27 +37,6 @@ func get_array_of_shapes_and_their_transforms() -> Array:
 			shapes_array[i] = shapes_array[i].create_convex_shape()
 	return shapes_array
 
-func player_entered():
-	if not player_inside:
-		player_inside = true
-		$StateMachine.current_state = "PlayerInside"
-
-func player_exited():
-	if player_inside:
-		player_inside = false
-		$StateMachine.current_state = "PlayerOutside"
-
-func fade_out():
-	$Ceilings.fade_out()
-	$Floors.fade_out()
-	$Walls.fade_out()
-
-func fade_in():
-	$Ceilings.fade_in()
-	$Floors.fade_in()
-	$Walls.fade_in()
-
 func place_player(player):
 	add_child(player)
 	player.transform = $PlayerSpawnPoint.transform
-	player_entered()

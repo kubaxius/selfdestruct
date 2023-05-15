@@ -1,8 +1,5 @@
 extends "res://floors/rooms/Room/states/room_state.gd"
 
-func _s_init():
-	parent.fade_out()
-
 func _s_process(_delta):
 	var players_array = get_tree().get_nodes_in_group("players")
 	if players_array.size() > 0:

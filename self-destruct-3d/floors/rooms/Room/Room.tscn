@@ -8,26 +8,15 @@
 [ext_resource path="res://floors/rooms/Room/states/player_inside_state.gd" type="Script" id=6]
 [ext_resource path="res://floors/rooms/Room/states/player_underneath_state.gd" type="Script" id=7]
 
-
-[node name="Room" type="Spatial" groups=[
-"rooms",
-]]
+[node name="Room" type="Spatial" groups=["rooms"]]
 script = ExtResource( 3 )
 
 [node name="Floors" parent="." instance=ExtResource( 1 )]
-data = {
-"cells": PoolIntArray(  )
-}
 
 [node name="Ceilings" parent="." instance=ExtResource( 1 )]
-data = {
-"cells": PoolIntArray(  )
-}
+visible = false
 
 [node name="Walls" parent="." instance=ExtResource( 1 )]
-data = {
-"cells": PoolIntArray(  )
-}
 
 [node name="Connections" type="Spatial" parent="."]
 
